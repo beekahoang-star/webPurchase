@@ -1,0 +1,21 @@
+Hướng Dẫn Khởi Động Nhanh
+Bước 1: Khởi động Hạ tầng Database, Cache & Broker
+powershell
+docker compose up -d
+Bước 2: Khởi động Backend Spring Boot 3
+powershell
+cd backend
+mvn spring-boot:run
+
+(Flyway sẽ tự động khởi tạo bảng, cấu hình GIN index và nạp sẵn tài khoản mẫu, danh mục đệ quy, sản phẩm demo).
+
+Bước 3: Khởi động Frontend React
+powershell
+cd frontend
+npm run dev
+
+Mở trình duyệt tại: http://localhost:5173
+
+Tài Khoản Mẫu (Đã nạp sẵn trong DB):
+Tài khoản Quản trị (Admin): admin / Admin@123 (Có toàn quyền quản lý SPU/SKU, Order Snapshot, SSE live counter).
+Tài khoản Khách hàng: customer1 / User@123 (Duyệt hàng, đặt hàng qua giỏ hàng và theo dõi snapshot).
